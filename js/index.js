@@ -1,6 +1,6 @@
 import  Controls from "./controls.js"
 import Timer from "./timer.js"
-import Sounds from "../sounds.js"
+import Sounds from "./sounds.js"
 import {
     playButton,
     pauseButton,
@@ -13,13 +13,13 @@ import {
 } from "./elements.js"
 
 
-const sound = Sound()
+const sound = Sounds()
 
 const controls = Controls({
     pauseButton,
     playButton,
-    pauseButton,
-    setButton
+    setButton,
+    stopButton
 })
 
 const timer = Timer({
@@ -71,7 +71,7 @@ soundButtonOn.addEventListener('click', function(){
 soundButtonOff.addEventListener('click',function(){
     soundButtonOn.classList.remove('hide')
     soundButtonOff.classList.add('hide')
-    sound.bgAudio.pause()
+     sound.bgAudio.pause()
 })
 
 
